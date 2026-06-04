@@ -16,3 +16,6 @@ yarn-debug.log*
 yarn-error.log*
 astro-dev*.log
 coverage/
+
+.dev.vars*
+!.dev.vars.example
