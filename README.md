@@ -40,6 +40,8 @@ Use it to update:
 
 Logo, favicon, Open Graph image, and platform icons are stored in `public/` and `public/icons/`.
 
+The author portrait source is `src/assets/author.jpg`. Astro generates compressed WebP variants at 320px, 640px, and the original image width (currently 767px), without upscaling. The browser selects a variant for the displayed size and screen density; the full JPEG is not served to visitors. Replace this source file to update the portrait and regenerate the optimized files on the next build.
+
 Used assets:
 
 - website logo: `public/logo.png`
@@ -52,7 +54,7 @@ To replace assets, either overwrite the existing files or update their paths in 
 
 ## Deployment to GitHub Pages
 
-The deployment workflow is defined in `.github/workflows/deploy.yml`. It runs on every push to the `main` branch, builds the Astro site, uploads the static artifact, and deploys it to GitHub Pages.
+The deployment workflow is defined in `.github/workflows/deploy.yml`. It runs on every push to the `master` branch, builds the Astro site, uploads the static artifact, and deploys it to GitHub Pages.
 
 No Cloudflare account or GitHub Secrets are required for this deployment path.
 
@@ -97,6 +99,18 @@ www  CNAME  pseckar.github.io
 
 Do not change the domain nameservers when using GitHub Pages with these DNS records.
 
-## Prepared for Later
+## Latest Episode and Audio
 
-The latest episode section is not displayed yet. `src/data/site.ts` contains a prepared `latestEpisode` value so the section can be added later without restructuring the rest of the page.
+The browser fetches `site.rss.url` on each page load, revalidating its cached response, and shows the most recently published playable episode, preferring full episodes over trailers. The feed currently permits cross-origin browser requests. No backend, API key, RSS proxy, scheduled build, or new dependency is needed. All episode-specific content comes from RSS; the static card only contains generic loading/fallback copy, the show logo, and the show-level Spotify link. The podcast host's own feed/CDN propagation can still delay a new episode appearing. An already-open page updates on reload.
+
+The episode card uses the RSS title, publication date, duration, artwork, a plain-text description excerpt, publisher link, and audio enclosure. Feed HTML is never injected into the page. Audio uses the browser's native controls (including seeking, volume and playback speed where supported), does not autoplay, and is not downloaded before interaction. Opening the intro and playing it pauses the latest episode, and vice versa.
+
+If RSS is unavailable, malformed, empty, or blocked, the page shows a retry option and keeps every platform link usable. Without JavaScript, the platform links, copy, contact, and expandable native intro player remain available. The intro's permanent links are configured in `site.intro`.
+
+## Appearance and Layout
+
+The page defaults to the system's light/dark preference, including changes while it is open. The three header buttons select light, dark, or system. A choice is saved locally when browser storage is available and synchronized across tabs. CSS also follows the system without JavaScript.
+
+The latest episode and platform links sit alongside one another on desktop. On smaller screens the platforms come first. Existing podcast and author copy remains in `src/data/site.ts`. The theme, responsive rules, and typography are in `src/styles/global.css`; browser behavior is in `src/scripts/page.ts`, and RSS parsing is in `src/scripts/feed.ts`.
+
+DM Sans and Manrope are self-hosted in `public/fonts/`, including Czech glyphs and their SIL Open Font Licenses. Their font-face definitions are in `src/styles/fonts.css`, with system font fallbacks. The site has no analytics, Google Fonts requests, or embedded third-party player; the browser contacts the podcast host for the feed, artwork, and requested audio.
