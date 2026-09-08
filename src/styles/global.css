@@ -62,7 +62,7 @@ a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .hero h1 { margin-top: 0; font-size: clamp(38px, 3.8vw, 52px); font-weight: 800; line-height: 1.14; letter-spacing: -2.2px; }
 .headline-accent { color: var(--teal); }
 .hero-subtitle { max-width: 530px; margin-top: 16px; color: var(--muted); font-size: 15px; line-height: 1.7; }
-.publishing-note { display: block; margin-top: 12px; padding-left: 12px; border-left: 2px solid var(--orange); color: var(--muted); font-weight: 400; }
+.publishing-note { font-weight: 700; }
 .text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 650; text-decoration: none; min-height: 44px; }
 .text-link:hover { color: var(--accent-text); }
 .hero-art { width: 230px; justify-self: center; position: relative; padding-bottom: 18px; }
