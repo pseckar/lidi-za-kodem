@@ -12,6 +12,7 @@ export const site = {
   locale: "cs_CZ",
   language: "cs",
   publishingNote: "Nová epizoda podcastu každý druhý pátek.",
+  publishingHighlight: "každý druhý pátek.",
   email: "podcast@lidizakodem.cz",
 
   assets: {

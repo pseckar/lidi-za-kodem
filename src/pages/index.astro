@@ -71,7 +71,7 @@ const structuredData = {
       <section class="hero wrap" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">Kuchyňkový pokec<br />o práci, životě<br />a <span class="headline-accent">tvorbě software</span></h1>
-          <p class="hero-subtitle">{site.subtitle} <strong class="publishing-note">{site.publishingNote}</strong></p>
+          <p class="hero-subtitle">{site.subtitle} {site.publishingNote.slice(0, -site.publishingHighlight.length)}<span class="publishing-note">{site.publishingHighlight}</span></p>
         </div>
         <div class="hero-art">
           <div class="cover-frame"><img src={site.assets.logo} alt="Logo podcastu Lidi za kódem" width="3000" height="3000" fetchpriority="high" /></div>
