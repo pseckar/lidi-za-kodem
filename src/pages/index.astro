@@ -126,8 +126,7 @@ const structuredData = {
       <section class="about-section wrap" id="o-podcastu" aria-labelledby="about-title">
         <div class="section-label"><h2 id="about-title">O podcastu</h2></div>
         <div class="section-copy">
-          <p class="lead">{site.about.lead}</p>
-          <p>{site.about.body}</p>
+          {site.about.body.map((paragraph) => <p>{paragraph}</p>)}
           <details class="intro-player">
             <summary><span class="intro-play-icon"><Icon name="play" /></span><span>Pusť si intro<span class="intro-caption">Jak to celé začalo · 1 minuta</span></span><Icon name="plus" /></summary>
             <div class="intro-player-content">
@@ -144,7 +143,7 @@ const structuredData = {
           <Image class="author-photo" src={site.author.photo} alt="Petr Sečkář u mikrofonu" widths={[320, 640, site.author.photo.width]} sizes="(max-width: 359px) calc(100vw - 40px), (max-width: 760px) 320px, (max-width: 1050px) 300px, 260px" format="webp" quality={80} loading="lazy" decoding="async" />
           <div class="section-copy">
             <div class="author-heading"><h3>{site.author.name.split(" - ")[0]}<span>{site.author.name.split(" - ")[1]}</span></h3></div>
-            <p>{site.author.bio}</p>
+            {site.author.bio.map((paragraph) => <p>{paragraph}</p>)}
             <div class="author-links">{site.author.socialLinks.map((link) => (
               <a class="text-link" href={link.href} target="_blank" rel="noopener noreferrer"><img src={link.icon} alt="" width="19" height="19" /> Potkáme se na {link.label}u <Icon name="arrow" /></a>
             ))}</div>

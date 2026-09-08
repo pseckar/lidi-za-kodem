@@ -22,16 +22,23 @@ export const site = {
   },
 
   about: {
-    lead:
-      "Kuchyňkový pokec vývojářů a dalších lidí z oboru vývoje software.",
-    body:
-      "Podcast je okénkem do života lidí z oboru vývoje software plného zběsilých sprintů, dohadování s AI agenty a dalších všedních příběhů. Každá epizoda přinese unikátní neformální rozhovor s novým hostem, v němž rozebereme témata technická i netechnická, budeme přemýtat o budoucnosti vývoje s AI, nebo se bavit o učení se nových věcí, well-being a smysluplné práci. Bude zkrátka vidět, že ZA KÓDEM ještě stále stojí LIDÉ. Věřím, že uslyšíš věci, které tě budou inspirovat, nebo se alespoň dobře pobavíš. Nová epizoda vychází vždy každý druhý pátek. Tak neváhej a poslouchej!"
+    body: [
+      "Podcast je okénkem do života lidí z oboru vývoje softwaru – světa plného zběsilých sprintů, dohadování s AI agenty a dalších všedních i nevšedních příběhů.",
+      "V každé epizodě si neformálně povídám s novým hostem. Probíráme technická i netechnická témata, přemýšlíme o budoucnosti vývoje s AI, bavíme se o učení nových věcí, well-beingu, smysluplné práci i o tom, co nám život v IT přináší.",
+      "Zkrátka chci ukázat, že ZA KÓDEM stále stojí LIDÉ.",
+      "Věřím, že tu uslyšíš něco, co tě inspiruje, přiměje k zamyšlení, nebo tě alespoň dobře pobaví.",
+      "Nová epizoda vychází každý druhý pátek. Tak neváhej a poslouchej!"
+    ]
   },
 
   author: {
     name: "Petr Sečkář - vývojář software a leader",
     photo: authorPhoto,
-    bio: " Když jsem se před 10 lety začínal živit tvorbou software, začínal jsem jako junior .NET vývojář. Od té doby jsem se malými krůčky stal senior vývojářem a team leaderem. Získal jsem zkušenosti s vedením projektů, lidí i týmů, ale třeba také s koučingem a mentoringem. Rád mluvím s lidmi o tom, co je na práci baví, s čím se potýkají, jak se učí nové věci a obecně co jim v práci či osobním životě dává smysl. Tyto diskuze mě inspirují a posouvají, a proto jsem se rozhodl je zachycovat formou podcastu, aby mohly být přínosné i ostatním.",
+    bio: [
+      "Když jsem se před deseti lety začal živit tvorbou softwaru, nastoupil jsem jako juniorní .NET vývojář. Od té doby jsem se postupně posunul přes seniorního vývojáře až k vedení týmu a získal zkušenosti s vedením projektů, lidí i týmů, ale také s mentoringem a koučinkem.",
+      "Rád si s lidmi povídám o tom, co je na jejich práci baví, s čím se potýkají, jak se učí nové věci a co jim v práci i osobním životě dává smysl.",
+      "Právě tyhle rozhovory mě často inspirují a posouvají dál. Proto jsem se rozhodl některé z nich zachytit formou podcastu, aby mohly být zajímavé a přínosné i pro ostatní."
+    ],
     socialLinks: [
       {
         label: "LinkedIn",
